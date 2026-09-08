@@ -78,6 +78,38 @@ export default defineConfig({
     },
     overrides: [
       {
+        // SSR probes capture context values during render for assertions.
+        files: [
+          "tests/link.test.ts",
+          "tests/shims.test.ts",
+          "tests/server-inserted-html-context.test.ts",
+        ],
+        rules: { "react/globals": "off" },
+      },
+      {
+        // These framework primitives retain render snapshots or forward callback
+        // refs. They do not use React Compiler's render-purity assumptions.
+        files: [
+          "packages/vinext/src/shims/slot.tsx",
+          "packages/vinext/src/shims/layout-segment-context.tsx",
+          "packages/vinext/src/shims/link.tsx",
+          "packages/vinext/src/server/app-browser-entry.ts",
+        ],
+        rules: { "react/refs": "off" },
+      },
+      {
+        // Preserve existing hydration and selection-reset behavior. Enabling
+        // this new compiler rule requires a separate behavior change.
+        files: [
+          "apps/web/app/benchmarks/components/chart.tsx",
+          "apps/web/app/benchmarks/components/performance-comparison.tsx",
+          "apps/web/app/benchmarks/components/performance-results.tsx",
+          "packages/vinext/src/client/dev-error-overlay.tsx",
+          "packages/vinext/src/shims/dynamic.ts",
+        ],
+        rules: { "react/set-state-in-effect": "off" },
+      },
+      {
         files: ["**.spec.ts", "**.test.ts"],
         rules: {
           "@typescript-eslint/no-explicit-any": "off",

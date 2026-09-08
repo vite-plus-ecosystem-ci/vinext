@@ -41,7 +41,12 @@ test.describe("Next.js compat: useReportWebVitals", () => {
         timeout: 10_000,
       })
       .toBe(true);
-    await page.goto("about:blank");
+    // CLS is reported when the document becomes hidden. Keep the document
+    // alive so Playwright can observe the report before navigation cancels it.
+    await page.evaluate(() => {
+      Object.defineProperty(document, "visibilityState", { configurable: true, value: "hidden" });
+      document.dispatchEvent(new Event("visibilitychange"));
+    });
 
     await expect
       .poll(() => [...new Set(reportedMetricNames)].sort().join(","), { timeout: 10_000 })

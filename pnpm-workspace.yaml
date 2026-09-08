@@ -71,7 +71,8 @@ catalog:
   next-intl: ^4.9.2
   next-themes: ^0.4.6
   next-view-transitions: ^0.3.5
-  nitro: npm:nitro-nightly@latest
+  # Preserve the original tested nightly when refreshing the toolchain.
+  nitro: npm:nitro-nightly@3.0.1-20260512-093145-0498ce70
   nuqs: ^2.8.8
   pathslash: ^0.1.0
   playwright: ^1.60.0
