@@ -50,7 +50,14 @@ export default {
         // Loaded dynamically by @vitejs/plugin-react when the React Compiler
         // integration test enables `react: { compiler: true }`.
         "oxc-transform-react",
+        // Declared for codehike by packageExtensions in pnpm-workspace.yaml.
+        "zod",
       ],
+    },
+    "packages/types": {
+      // This import belongs to vendored Next.js declarations. Vinext declares
+      // the runtime dependency in packages/vinext/package.json.
+      ignoreDependencies: ["react-server-dom-webpack"],
     },
     "packages/vinext": {
       entry: [
@@ -165,6 +172,7 @@ export default {
     "vinext",
     // system/user-project binaries invoked by runtime scripts
     "ps",
+    "pgrep",
     "taskkill",
     "eslint",
     "gh",

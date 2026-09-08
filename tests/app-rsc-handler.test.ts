@@ -3433,7 +3433,7 @@ describe("createAppRscHandler", () => {
     // test/e2e/app-dir/navigation/middleware.js
     // https://github.com/vercel/next.js/blob/v16.2.6/test/e2e/app-dir/navigation/middleware.js
     const middleware = vi.fn(
-      (_: { nextUrl: URL }) => new Response(null, { headers: { "x-middleware-next": "1" } }),
+      (_request: { nextUrl: URL }) => new Response(null, { headers: { "x-middleware-next": "1" } }),
     );
     const dispatchMatchedPage = vi.fn(async () => new Response("page", { status: 200 }));
     const headers = createRscRequestHeaders({ mountedSlotsHeader: "slot:modal:/" });
