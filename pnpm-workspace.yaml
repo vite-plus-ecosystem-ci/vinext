@@ -3,7 +3,7 @@ frozenLockfile: true
 preferFrozenLockfile: true
 saveExact: true
 blockExoticSubdeps: true
-minimumReleaseAge: 1440
+minimumReleaseAge: 0
 
 packages:
   - apps/*
