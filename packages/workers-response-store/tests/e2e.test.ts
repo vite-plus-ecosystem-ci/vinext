@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { Miniflare } from "miniflare";
-import { afterEach, beforeEach, test } from "vitest";
+import { afterEach, beforeEach, test } from "vite-plus/test";
 
 import type {
   ResponseStorePurgeOptions,

@@ -6,6 +6,7 @@ const { default: getTscPath } = await import(
 );
 
 export default defineConfig({
+  test: { clearMocks: false },
   pack: {
     entry: ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.d.ts"],
     clean: true,

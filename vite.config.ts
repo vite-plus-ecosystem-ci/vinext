@@ -133,6 +133,8 @@ export default defineConfig({
     ],
   },
   test: {
+    clearMocks: false,
+    sharedViteServer: false,
     // GitHub Actions reporter adds inline failure annotations in PR diffs.
     // Agent reporter suppresses passing test noise when running inside AI agents.
     reporters: process.env.CI ? ["default", "github-actions"] : ["default", "agent"],
@@ -165,10 +167,12 @@ export default defineConfig({
 
     projects: [
       {
+        extends: false,
         resolve: {
           alias: WORKSPACE_SRC_ALIAS,
         },
         test: {
+          clearMocks: false,
           name: "unit",
           setupFiles: [MSW_SETUP],
           // `scripts/**` covers the release-tooling unit tests
@@ -236,10 +240,12 @@ export default defineConfig({
         },
       },
       {
+        extends: false,
         resolve: {
           alias: WORKSPACE_SRC_ALIAS,
         },
         test: {
+          clearMocks: false,
           name: "integration",
           env: {
             VINEXT_PARALLEL_INTEGRATION: "true",
