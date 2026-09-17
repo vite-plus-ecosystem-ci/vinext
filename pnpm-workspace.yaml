@@ -23,7 +23,7 @@ catalog:
   "@mdx-js/react": ^3.1.1
   "@mdx-js/rollup": ^3.1.1
   "@phosphor-icons/react": ^2.1.10
-  "@playwright/test": ^1.60.0
+  "@playwright/test": 1.60.0
   "@radix-ui/react-dialog": ^1.1.14
   "@radix-ui/react-dropdown-menu": ^2.1.15
   "@radix-ui/react-slot": ^1.2.3
@@ -77,7 +77,7 @@ catalog:
   nitro: npm:nitro-nightly@3.0.1-20260512-093145-0498ce70
   nuqs: ^2.8.8
   pathslash: ^0.1.0
-  playwright: ^1.60.0
+  playwright: 1.60.0
   postcss: 8.5.10
   react: ^19.2.7
   react-dom: ^19.2.7
