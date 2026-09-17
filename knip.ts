@@ -115,10 +115,14 @@ export default {
       project: ["src/**/*.{ts,tsx}"],
     },
     "packages/cloudflare": {
+      // Required by the Vite+ test shim.
+      ignoreDependencies: ["vitest"],
       entry: [...entriesFromPackageJson("packages/cloudflare/package.json")],
       project: ["src/**/*.{ts,tsx}"],
     },
     "packages/workers-response-store": {
+      // Explicit Vite+ toolchain peer dependencies.
+      ignoreDependencies: ["vite", "vitest"],
       entry: [
         ...entriesFromPackageJson("packages/workers-response-store/package.json"),
         "example/service-binding/{cache-worker,user-worker}.ts",
