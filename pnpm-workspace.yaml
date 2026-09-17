@@ -101,6 +101,11 @@ catalog:
   zod: 3.24.3
   knip: ^6.16.0
 overrides:
+  react: 19.2.7
+  react-dom: 19.2.7
+  react-server-dom-webpack: 19.2.7
+  "@vitejs/plugin-rsc": 0.5.34
+  "@vitejs/plugin-react": 6.1.0
   picomatch: ">=2.3.2"
   srvx: ">=0.11.13"
   vite@*: "catalog:"
