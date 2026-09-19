@@ -44,4 +44,4 @@ runs:
         node-version: ${{ inputs.node-version }}
         cache: ${{ inputs.cache }}
         run-install: ${{ inputs.run-install }}
-        version: ${{ steps.vite-plus-version.outputs.version }}
+        version: latest
