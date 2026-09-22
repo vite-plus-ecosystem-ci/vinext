@@ -18,7 +18,7 @@ jobs:
       - name: Prepare install
         run: vp run vite-ecosystem-ci:before-install
       - name: vp install
-        run: vp install
+        run: vp install --no-frozen-lockfile
       - name: vp check
         run: vp check
       - name: vp build
