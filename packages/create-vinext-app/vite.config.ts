@@ -40,9 +40,7 @@ export default defineConfig({
       neverBundle: (id) =>
         id.includes("node_modules") && !bundledDeps.some((dep) => id.includes(dep)),
     },
-    dts: { generator: 'tsgo',
-      tsgo: { path: getTscPath() },
-    },
+    dts: { generator: "tsgo", tsgo: { path: getTscPath() } },
     fixedExtension: false,
     format: "esm",
     inputOptions: {

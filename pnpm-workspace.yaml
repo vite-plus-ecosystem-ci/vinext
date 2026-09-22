@@ -99,16 +99,16 @@ catalog:
 overrides:
   picomatch: ">=2.3.2"
   srvx: ">=0.11.13"
-  vite@*: 'catalog:'
-  vitest@*: 'catalog:'
+  vite@*: "catalog:"
+  vitest@*: "catalog:"
 
 peerDependencyRules:
   allowAny:
     - vite
     - vitest
   allowedVersions:
-    vite: '*'
-    vitest: '*'
+    vite: "*"
+    vitest: "*"
   ignoreMissing:
     - next
     - webpack
@@ -140,15 +140,15 @@ allowBuilds:
   # tests only exercise the runtime SDK, so the CLI postinstall is unnecessary.
   "@sentry/cli": false
 minimumReleaseAgeExclude:
-  - '@oxc-project/runtime'
-  - '@oxc-project/types'
+  - "@oxc-project/runtime"
+  - "@oxc-project/types"
   - vite-plus
-  - '@voidzero-dev/*'
+  - "@voidzero-dev/*"
   - oxlint
-  - '@oxlint/*'
+  - "@oxlint/*"
   - oxlint-tsgolint
-  - '@oxlint-tsgolint/*'
+  - "@oxlint-tsgolint/*"
   - oxfmt
-  - '@oxfmt/*'
+  - "@oxfmt/*"
   - vitest
-  - '@vitest/*'
+  - "@vitest/*"

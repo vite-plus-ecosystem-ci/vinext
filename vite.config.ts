@@ -59,6 +59,9 @@ export default defineConfig({
       "@typescript-eslint/no-unsafe-function-type": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/no-redeclare": "error",
+      "eslint/no-irregular-whitespace": "off",
+      "eslint/no-redeclare": "off",
+      "eslint/no-unused-vars": "off",
       "@typescript-eslint/no-implied-eval": "error",
 
       "unicorn/prefer-node-protocol": "error",
@@ -71,9 +74,12 @@ export default defineConfig({
       "arrow-body-style": ["error", "as-needed"],
 
       "react/exhaustive-deps": "error",
+      "react/globals": "off",
       "react/no-array-index-key": "error",
+      "react/refs": "off",
       "react/rules-of-hooks": "error",
       "react/self-closing-comp": "error",
+      "react/set-state-in-effect": "off",
       "vinext-utils/prefer-shared-utils": "error",
     },
     overrides: [

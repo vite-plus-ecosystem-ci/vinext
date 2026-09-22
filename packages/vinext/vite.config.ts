@@ -101,9 +101,7 @@ export default defineConfig({
       entryFileNames: renameBundledDepsOutput,
       chunkFileNames: renameBundledDepsOutput,
     },
-    dts: { generator: 'tsgo',
-      tsgo: { path: getTscPath() },
-    },
+    dts: { generator: "tsgo", tsgo: { path: getTscPath() } },
     copy: [
       {
         from: "src/shims/next-shims-public.d.ts",
