@@ -10,9 +10,13 @@ export default defineConfig({
     entry: ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.d.ts"],
     clean: true,
     deps: {
-      skipNodeModulesBundle: true,
+      // tsdown <0.23 compatibility: resolve external dependency subpaths.
+      // Remove to preserve subpath imports as written (the new default).
+      // https://tsdown.dev/options/dependencies#deps-resolvedepsubpath
+      resolveDepSubpath: true,
+      neverBundle: true,
     },
-    dts: {
+    dts: { generator: 'tsgo',
       tsgo: { path: getTscPath() },
     },
     fixedExtension: false,

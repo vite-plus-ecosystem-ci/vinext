@@ -77,6 +77,10 @@ export default defineConfig({
     entry: ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.d.ts"],
     clean: true,
     deps: {
+      // tsdown <0.23 compatibility: resolve external dependency subpaths.
+      // Remove to preserve subpath imports as written (the new default).
+      // https://tsdown.dev/options/dependencies#deps-resolvedepsubpath
+      resolveDepSubpath: true,
       // Agent detection and image dimension extraction are build-time
       // implementation details, so inline them rather than requiring vinext
       // consumers to install them. Same for pathslash: it is our own ~90-line
@@ -97,7 +101,7 @@ export default defineConfig({
       entryFileNames: renameBundledDepsOutput,
       chunkFileNames: renameBundledDepsOutput,
     },
-    dts: {
+    dts: { generator: 'tsgo',
       tsgo: { path: getTscPath() },
     },
     copy: [
