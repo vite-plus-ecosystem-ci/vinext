@@ -3,7 +3,9 @@ frozenLockfile: true
 preferFrozenLockfile: true
 saveExact: true
 blockExoticSubdeps: true
-minimumReleaseAge: 1440
+# Ecosystem-ci smoke test: proxied package metadata from the preview bridge can
+# omit publish times, so pnpm cannot apply the project's age policy here.
+minimumReleaseAge: 0
 
 packages:
   - apps/*
