@@ -140,6 +140,9 @@ allowBuilds:
   # tests only exercise the runtime SDK, so the CLI postinstall is unnecessary.
   "@sentry/cli": false
 minimumReleaseAgeExclude:
+  # Ecosystem-ci smoke test: bridge metadata for this proxied package has no
+  # publish time, so pnpm cannot apply the age policy during preview installs.
+  - next
   - "@oxc-project/runtime"
   - "@oxc-project/types"
   - vite-plus
