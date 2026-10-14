@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "start": "vite preview",
+    "dev": "vp dev",
+    "build": "vp build",
+    "start": "vp preview",
     "deploy": "vinext-cloudflare deploy"
   },
   "dependencies": {
